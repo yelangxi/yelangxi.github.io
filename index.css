@@ -1,0 +1,345 @@
+/*初始化*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    list-style: none;
+}
+.page{
+    width: 100%;
+    height: 1080px;
+}
+/*滤镜实现背景图片自适应*/
+.firstbg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.firstbg .stretch{
+    width: 100%;
+    height: 100%;
+}
+
+a:link{
+    text-decoration: none;
+    color: #ffffff;
+}
+a:hover{
+    text-decoration: none;
+}
+a:active{
+    text-decoration: none;
+    color: #ffffff;
+}
+a:visited{
+    text-decoration: none;
+    color: #ffffff;
+}
+.container{
+    background-size: 100% 100%;
+}
+
+/*导航*/
+.nav{
+    position: fixed;  /*浮动定位*/
+    top:0;
+    width: 100%;
+}
+.logo{
+    float: left;
+}
+.column{
+    float: right;
+}
+.nav li{
+    float: right;
+    color: white;
+    width: 100px;
+    line-height: 80px;
+    text-align: center;
+    list-style: none;
+}
+.nav li:hover{
+    background-color: rgba(120,60, 180, 0.28);
+}
+.column a{
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+	display:block;
+}
+
+.logo img{
+    height: 60px;
+    width: 60px;
+}
+.logo{
+    margin: 10px 0 10px 10px;
+}
+
+/*first page*/
+.first{
+    
+    padding-top: 250px;
+    height: 465px;
+    
+}
+.content1{
+    display: none;
+    width: 700px;
+    height: 200px;
+    margin: auto;
+}
+.title{
+    text-align: center;
+    font-size: 60px;
+    color: #fff;
+    font-family: "Adobe Kaiti Std";
+    margin: 0 auto;
+    border-bottom: 2px solid #ffffff;
+    margin-bottom: 20px;
+}
+.content1 p{
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+/*second page*/
+.second{
+    background-color:#FFF8C9;
+    padding-top: 150px;
+}
+
+/*实现中心放大效果
+原理:当鼠标悬停后图片的高度、宽度各自增加50像素大小，然后用相对定位绝对定位，相当于将图片控制向外扩散25px大小
+注意:父div position: relative, 放大的div position: absolute;*/
+.content2 .myimg{
+    height: 300px;
+    width: 300px;
+    margin:0 auto;
+    position: relative;
+}
+.myimg img{
+    position: absolute;
+    width:300px;
+    height:300px;
+    left: 0px;
+    top:0px;
+}
+
+.userinfo{
+    padding-top: 25px;
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+.userinfo li{
+    list-style: none;
+}
+.name{
+    line-height: 40px;
+    font-size: 30px;
+    color: #B50000;
+}
+.sign{
+    line-height: 50px;
+    font-size: 40px;
+}
+.constellation img{
+    height: 120px;
+    width:120px;
+}
+.adress{
+    line-height: 35px;
+    font-size: 20px;
+}
+
+/*third page*/
+.third{
+
+}
+.content3{
+    margin-top: -300px;
+    position: relative;
+
+}
+.content3 img{
+    height: 360px;
+    width: 640px;
+}
+.content3 .img{
+    width: 640px;
+    margin: auto;
+}
+.thirdbg{
+    position: relative;
+    width: 100%;
+    height: 720px;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+.thirdbg .stretch{
+    width: 100%;
+    height: 100%;
+}
+.dormitory{
+    position: relative;
+    text-align: center;
+}
+.content3 h2{
+    color: #ffffff;
+    text-align: center;
+    line-height: 60px;
+    font-size: 35px;
+    border-bottom: 2px solid #ffffff;
+
+}
+.good{
+    color: white;
+    font-size: 45px;
+}
+
+/*fourth page*/
+.fourth{
+    height: 900px;
+    background-color: #56abe4;
+}
+.content4{
+    padding-top: 150px;
+}
+.list{
+    width: 840px;
+    margin: 0 auto;
+}
+.list .piece{
+    position: relative;
+    width: 220px;
+    height: 300px;
+    margin: 0 30px 50px 30px;
+    background-color: blueviolet;
+    float: left;
+    cursor: pointer;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#666666,direction=120,strength=5);/*ie*/
+    -moz-box-shadow: 2px 2px 10px #666666;/*firefox*/
+    -webkit-box-shadow: 2px 2px 10px #666666;/*safari或chrome*/
+    box-shadow:2px 2px 10px #666666;/*opera或ie9   #909090  */
+}
+.list img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.list ul{
+    height: 370px;
+}
+.piece .container{
+    position: absolute;
+}
+.piece h2{
+    color: #ffffff;
+    text-align: center;
+    line-height: 40px;
+}
+
+/*模态框样式 start*/
+.modal-overlay {
+    visibility: hidden;
+    position: absolute;   /* 使用绝对定位或固定定位  */
+    left: 0px;
+    top:0px;
+    width:100%;
+    text-align:center;
+    z-index:5000;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    /*background-color: #333;
+    opacity: 0.5;   !* 背景半透明 *!*/
+}
+.modal-data{
+    position: relative;
+    width:600px;
+    margin: 15% auto 0;
+    background-color: #fff;
+    padding:15px;
+    text-align:center;
+    border: 3px solid #56abe4;
+}
+.modal-skill > h1 {display: inline;}
+.modal-skill > h2 {display: inline;}
+.modal-skill > h3 {display: inline;}
+.modal-sports{
+    text-align: right;
+}
+.modal-close{
+    cursor: pointer;
+    float: right;
+    width: 32px;
+    height: 32px;
+}
+.modal-sports{
+    background-image: url("images/533781.png");
+    margin: 30px;
+}
+.modal-sports > h2{
+    color: #B50000;
+}
+
+.modal-github{
+    margin: 50px;
+}
+.modal-github  a{
+    font-size: 35px;
+    color: #56abe4;
+}
+
+#music-data{
+    margin-bottom:0;
+}
+.modal-music{
+    height: 300px;
+    background-image: url("images/wlh.jpg");
+}
+.musicdescribe{
+    position: relative;
+    left: 120px;
+    top:20px;
+}
+.musicdescribe audio{
+    margin-bottom: 20px;
+}
+
+.modal-movie{
+    height: 300px;
+}
+.movieimg{
+    float: left;
+}
+.moviedescribe{
+    float: center;
+    margin-top: 30px;
+}
+
+.modal-school{
+    height: 300px;
+}
+.schoolimg{
+    float: left;
+}
+.schooldescribe{
+    float: right;
+    margin-top: 180px;
+}
+/*模态框 end*/
+
+.footer{
+    color: #ffffff;
+    height: 30px;
+    text-align: center;
+    background-color: #56abe4;
+}
